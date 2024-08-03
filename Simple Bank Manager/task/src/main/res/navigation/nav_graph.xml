@@ -1,0 +1,118 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/nav_graph"
+    app:startDestination="@id/loginFragment">
+
+    <fragment
+        android:id="@+id/loginFragment"
+        android:name="org.hyperskill.simplebankmanager.LoginFragment"
+        android:label="fragment_login"
+        tools:layout="@layout/fragment_login">
+        <argument
+            android:name="username"
+            android:defaultValue="Lara"
+            app:argType="string" />
+        <argument
+            android:name="password"
+            android:defaultValue="1234"
+            app:argType="string" />
+
+        <argument
+            android:name="billMap"
+            app:argType="string" />
+
+        <action
+            android:id="@+id/action_loginFragment_to_userMenuFragment"
+            app:destination="@id/userMenuFragment" />
+    </fragment>
+
+    <fragment
+        android:id="@+id/userMenuFragment"
+        android:name="org.hyperskill.simplebankmanager.UserMenuFragment"
+        android:label="fragment_user_menu"
+        tools:layout="@layout/fragment_user_menu">
+        <argument
+            android:name="username"
+            app:argType="string" />
+        <argument
+            android:name="billMap"
+            app:argType="string" />
+
+        <action
+            android:id="@+id/action_userMenuFragment_to_viewBalanceFragment"
+            app:destination="@id/viewBalanceFragment" />
+        <action
+            android:id="@+id/action_userMenuFragment_to_transferFundsFragment"
+            app:destination="@id/transferFundsFragment" />
+        <action
+            android:id="@+id/action_userMenuFragment_to_calculateExchangeFragment"
+            app:destination="@id/calculateExchangeFragment" />
+
+        <action
+            android:id="@+id/action_userMenuFragment_to_payBillsFragment"
+            app:destination="@id/payBillsFragment" />
+    </fragment>
+
+    <fragment
+        android:id="@+id/viewBalanceFragment"
+        android:name="org.hyperskill.simplebankmanager.ViewBalanceFragment"
+        android:label="fragment_view_balance"
+        tools:layout="@layout/fragment_view_balance">
+        <argument
+            android:name="balance"
+            app:argType="string" />
+    </fragment>
+
+    <fragment
+        android:id="@+id/transferFundsFragment"
+        android:name="org.hyperskill.simplebankmanager.TransferFundsFragment"
+        android:label="fragment_transfer_funds"
+        tools:layout="@layout/fragment_transfer_funds">
+        <argument
+            android:name="balance"
+            app:argType="string" />
+        <argument
+            android:name="billMap"
+            app:argType="string" />
+        <action
+            android:id="@+id/action_transferFundsFragment_to_userMenuFragment"
+            app:destination="@id/userMenuFragment" />
+    </fragment>
+
+    <fragment
+        android:id="@+id/calculateExchangeFragment"
+        android:name="org.hyperskill.simplebankmanager.CalculateExchangeFragment"
+        android:label="fragment_calculate_exchange"
+        tools:layout="@layout/fragment_calculate_exchange">
+        <argument
+            android:name="exchangeMap"
+            app:argType="string" />
+        <action
+            android:id="@+id/action_userMenuFragment_to_calculateExchangeFragment"
+            app:destination="@id/calculateExchangeFragment" />
+    </fragment>
+
+    <fragment
+        android:id="@+id/payBillsFragment"
+        android:name="org.hyperskill.simplebankmanager.PayBillsFragment"
+        android:label="Pay Bills"
+        tools:layout="@layout/fragment_pay_bills">
+        <argument
+            android:name="balance"
+            app:argType="string" />
+        <argument
+            android:name="billMap"
+            app:argType="string" />
+        <action
+            android:id="@+id/action_userMenuFragment_to_payBillsFragment"
+            app:destination="@id/payBillsFragment" />
+        <action
+            android:id="@+id/action_payBillsFragment_to_userMenuFragment"
+            app:destination="@id/userMenuFragment" />
+
+    </fragment>
+
+
+</navigation>

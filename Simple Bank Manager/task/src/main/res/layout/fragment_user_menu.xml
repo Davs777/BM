@@ -1,0 +1,44 @@
+<?xml version="1.0" encoding="utf-8"?>
+<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+    <TextView
+        android:id="@+id/userMenuWelcomeTextView"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Welcome $username"
+        android:layout_gravity="center_horizontal" />
+
+    <Button
+        android:id="@+id/userMenuViewBalanceButton"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="view balance"
+        android:layout_gravity="center_horizontal"
+        android:layout_marginTop="30dp" />
+
+    <Button
+        android:id="@+id/userMenuTransferFundsButton"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="transfer funds"
+        android:layout_gravity="center_horizontal"
+        android:layout_marginTop="60dp" />
+
+    <Button
+        android:id="@+id/userMenuExchangeCalculatorButton"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="calculate exchange"
+        android:layout_gravity="center_horizontal"
+        android:layout_marginTop="90dp" />
+
+    <Button
+        android:id="@+id/userMenuPayBillsButton"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="pay bills"
+        android:layout_gravity="center_horizontal"
+        android:layout_marginTop="120dp" />
+</FrameLayout>
